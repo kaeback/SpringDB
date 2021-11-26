@@ -31,7 +31,7 @@ public class MemberDAO {
 		int result = 0;
 		MemberMapper mapper = sqlSession.getMapper(MemberMapper.class);
 		
-		mapper.insertMemberDetail(member);
+		result = mapper.insertMember(member);
 		
 		return result;
 	}

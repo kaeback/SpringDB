@@ -9,7 +9,7 @@
 <script type="text/javascript">
 	function formCheck(){
 		if (!idDuplicateCheck()) return;
-		if (!passwordCheck()) return;
+		if (!passwdCheck()) return;
 		if (!nameCheck()) return;
 		if (!birthCheck()) return;
 
@@ -48,23 +48,23 @@
 		return result;
 	}
 
-	function passwordCheck(){
-		var password = $("#password").val();
-		var password2 = $("#password2").val();
+	function passwdCheck(){
+		var passwd = $("#passwd").val();
+		var passwd2 = $("#passwd2").val();
 
-		if (password.length < 4 || password.length > 20){
-			$("#passwordCheck").text("패스워드는 4~20자리로 입력해 주세요.");
-			$("#password").focus();
+		if (passwd.length < 4 || passwd.length > 20){
+			$("#passwdCheck").text("패스워드는 4~20자리로 입력해 주세요.");
+			$("#passwd").focus();
 			return false;
 		}
 		
-		if (password != password2) {
-			$("#passwordCheck").text("패스워드와 패스워드 확인이 일치하지 않습니다.");
-			$("#password").focus();
+		if (passwd != passwd2) {
+			$("#passwdCheck").text("패스워드와 패스워드 확인이 일치하지 않습니다.");
+			$("#passwd").focus();
 			return false;
 		}
 
-		$("#passwordCheck").text("");
+		$("#passwdCheck").text("");
 		return true;
 	}
 
@@ -117,13 +117,13 @@
 			<tr>
 				<th>패스워드</th>
 				<td>
-					<input type="password" id="password" name="password">
-					<div id="passwordCheck" class="txt_red"></div>	
+					<input type="password" id="passwd" name="passwd">
+					<div id="passwdCheck" class="txt_red"></div>	
 				</td>
 			</tr>
 			<tr>
 				<th>패스워드 확인</th>
-				<td><input type="password" id="password2" name="password2"></td>
+				<td><input type="password" id="passwd2" name="passwd2"></td>
 			</tr>
 			<tr>
 				<th>이름</th>

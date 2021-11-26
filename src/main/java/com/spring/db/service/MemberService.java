@@ -19,4 +19,14 @@ public class MemberService {
 		
 		return result;
 	}
+	
+	public boolean inserMember(Member member) {
+		boolean result = false;
+		
+		int cnt = dao.insertMember(member);
+		
+		if (cnt > 0) result = true;
+		
+		return result;
+	}
 }
