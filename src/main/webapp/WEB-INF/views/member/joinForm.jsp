@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>회원가입</title>
+<link rel="stylesheet" type="text/css" href="css/default.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
 	function formCheck(){
@@ -95,14 +96,9 @@
 	}
 
 </script>
-<style type="text/css">
-	.txt_red {
-		color: red;
-	}
-</style>
 </head>
 <body>
-<div>
+<div id="container">
 	<h1>[ 회원가입 ]</h1>
 	<form action="joinMember" method="post">
 		<table>
@@ -148,7 +144,7 @@
 				<td><input type="text" id="email" name="email"></td>
 			</tr>
 			<tr>
-				<td colspan="2">
+				<td class="center" colspan="2">
 					<input type="button" value="회원가입" onclick="formCheck()">
 					<input type="reset" value="다시 작성">	
 				</td>
