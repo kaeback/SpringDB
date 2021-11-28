@@ -5,13 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <title>login</title>
-<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="../css/default.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
 
 	$(function(){
 		$("#btn_login").click(function(){
-			// 유효성 검사 추가 필요
+			
 			var id = $("#id").val();
 			var passwd = $("#passwd").val();
 			//debugger;
@@ -27,11 +27,9 @@
 				return false;
 			}
 						
-			//debugger;
 			$.ajax({
 				url : "login",
 				type : "post",
-				//async : false,
 				data : {"id" : id, 
 						"passwd" : passwd},
 				success : function(rec_data){
@@ -42,11 +40,13 @@
 					}
 				},
 				error : function(rec_data){
+					console.log(rec_data);
 					$("#txt_login").text("서버 통신에 실패했습니다.");		
 				}
 			});	
 		});
 		
+		// 패스워드에서 엔터키 이벤트 처리
 		$("#passwd").keypress(function(event){
 			if(event.which == 13){
 				$("#btn_login").click();

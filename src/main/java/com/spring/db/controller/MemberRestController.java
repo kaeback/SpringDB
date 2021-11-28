@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.spring.db.service.MemberService;
 import com.spring.db.vo.Member;
 
+@RequestMapping("/member")
 @RestController
 public class MemberRestController {
 	
@@ -62,6 +63,13 @@ public class MemberRestController {
 			result = true;
 		} 
 		
+		return result;
+	}
+	
+	
+	public boolean updateMember(Member member, HttpSession session) {
+		boolean result = false;
+		logger.debug("member : {}", member);
 		return result;
 	}
 }

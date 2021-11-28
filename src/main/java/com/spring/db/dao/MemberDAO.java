@@ -57,7 +57,11 @@ public class MemberDAO {
 		return member;
 	}
 	
-	
+	/**
+	 * 로그인 처리를 위한 회원정보 검색
+	 * @param member
+	 * @return
+	 */
 	public Member selectMember(Member member) {
 		Member member_info = null;
 		MemberMapper mapper = sqlSession.getMapper(MemberMapper.class);
@@ -65,5 +69,14 @@ public class MemberDAO {
 		member_info = mapper.selectMember(member);
 		
 		return member_info;
+	}
+	
+	
+	public int updateMember(Member member) {
+		int result = 0;
+		MemberMapper mapper = sqlSession.getMapper(MemberMapper.class);
+		result = mapper.updateMember(member);
+		
+		return result;
 	}
 }

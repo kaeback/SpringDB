@@ -14,6 +14,7 @@ import com.spring.db.service.MemberService;
 import com.spring.db.vo.Member;
 
 @Controller
+@RequestMapping("/member")
 @SessionAttributes("login_data")
 public class MemberController {
 	
@@ -65,5 +66,14 @@ public class MemberController {
 		session.invalidate();
 		
 		return "redirect:/";
+	}
+	
+	/**
+	 * 회윈정보 수정 폼 이동
+	 * @return
+	 */
+	@RequestMapping(value = "updateMemberForm", method = RequestMethod.GET)
+	public String updateMemberForm() {
+		return "member/updateMemberForm";
 	}
 }

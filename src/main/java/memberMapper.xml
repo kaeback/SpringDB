@@ -23,4 +23,25 @@
 	<select id="selectMember" parameterType="member" resultType="member">
 		select * from member where id = #{id} and passwd = #{passwd}
 	</select>
+	
+	<!-- 회원정보 수정 -->
+	<update id="updateMember" parameterType="member">
+		update member set
+		<if test="passwd != null">
+			passwd = #{passwd}
+		</if>
+		<if test="name != null">
+			name = #{name}
+		</if>
+		<if test="birth != null">
+			birth = #{birth}
+		</if>
+		<if test="phone != null">
+			phone = #{phone}
+		</if>
+		<if test="email != null">
+			email = #{email}
+		</if>
+		where id = #{id}
+	</update>
 </mapper>

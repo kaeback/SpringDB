@@ -52,4 +52,14 @@ public class MemberService {
 		
 		return member_info;
 	}
+	
+	public boolean updateMember(Member member) {
+		boolean result = false;
+		
+		if (dao.updateMember(member) > 0) {
+			result = true;
+		}
+		
+		return result;
+	}
 }
