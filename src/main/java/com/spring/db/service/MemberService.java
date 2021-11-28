@@ -30,7 +30,7 @@ public class MemberService {
 	 * @param member
 	 * @return
 	 */
-	public boolean inserMember(Member member) {
+	public boolean insertMember(Member member) {
 		boolean result = false;
 		
 		int cnt = dao.insertMember(member);
@@ -53,6 +53,19 @@ public class MemberService {
 		return member_info;
 	}
 	
+	public Member selectMemberById(String id) {
+		Member member_info = null;
+		
+		member_info = dao.selectMemberById(id);
+		
+		return member_info;
+	}
+	
+	/**
+	 * 회원정보 수정
+	 * @param member
+	 * @return
+	 */
 	public boolean updateMember(Member member) {
 		boolean result = false;
 		
